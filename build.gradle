@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.6.7'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'groovy'
 }
 
 group = 'com.neo'
@@ -19,12 +20,19 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.5'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.25'
+	annotationProcessor 'org.projectlombok:lombok:1.18.22'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
+	implementation 'javax.xml.bind:jaxb-api:2.3.0-b170201.1204'
+
+	// groovy 추가
+	implementation('org.codehaus.groovy:groovy:3.0.8')
 }
 
 tasks.named('test') {
